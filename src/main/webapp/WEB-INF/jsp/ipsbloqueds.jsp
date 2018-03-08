@@ -35,7 +35,7 @@
 			
 			
 			<div>
-				<a class="btn btn-primary" href="/home">Go Home!</a>
+				<a class="btn btn-primary" href="/">Go Home!</a>
 			</div>	
 		
 			

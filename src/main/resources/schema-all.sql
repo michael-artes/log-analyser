@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS log_analyser;
-
 DROP TABLE IF EXISTS tb_log_analyser;
 DROP TABLE IF EXISTS tb_ips_bloqued;
 

@@ -57,7 +57,7 @@ public class LogConfiguration {
     	
     	
         FlatFileItemReader<LogAnalyserDTO> reader = new FlatFileItemReader<LogAnalyserDTO>();
-        reader.setResource(new ClassPathResource("access-less.log"));
+        reader.setResource(new ClassPathResource("access.log"));
 		reader.setLineMapper(lineMapper);
 		
         return reader;

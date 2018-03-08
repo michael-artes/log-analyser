@@ -19,7 +19,7 @@ public class LogController {
 	@Autowired
 	private LogAnalyserService logAnalyserService;
 
-    @RequestMapping(method=RequestMethod.GET, value="home")
+    @RequestMapping(method=RequestMethod.GET, value="/")
     public String loginMessage(){
         return "home";
     }
@@ -38,7 +38,7 @@ public class LogController {
     @RequestMapping(method=RequestMethod.POST, value="search")
     public ModelAndView search(String startDate, String duration, int threshold, RedirectAttributes attributes) {
     	
-    	ModelAndView view = new ModelAndView("redirect:/home");
+    	ModelAndView view = new ModelAndView("redirect:/");
     	
     	StringBuilder sbValidate = logAnalyserService.validateParam(startDate, duration, threshold);
     	
