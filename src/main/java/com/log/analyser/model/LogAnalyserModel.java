@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="log_analyser")
+@Table(name="tb_log_analyser")
 public class LogAnalyserModel {
 	
 	@Id
@@ -19,8 +19,14 @@ public class LogAnalyserModel {
 	
 	@Column(name="data_access")
 	private Date dataAccess;
+
+	@Column(name="ip")
 	private String ip;
+
+	@Column(name="request")
 	private String request;
+	
+	@Column(name="status")
 	private int status;
 	
 	@Column(name="user_agent")

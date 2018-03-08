@@ -1,4 +1,4 @@
-package com.log.analyser.model;
+package com.log.analyser.dto;
 
 public class LogAnalyserDTO {
 	

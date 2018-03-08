@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import com.log.analyser.configuration.listener.JobCompletionNotificationListener;
-import com.log.analyser.model.LogAnalyserDTO;
+import com.log.analyser.dto.LogAnalyserDTO;
 import com.log.analyser.model.LogAnalyserModel;
 import com.log.analyser.processor.LogAnalyserProcessor;
 
@@ -68,7 +68,7 @@ public class LogConfiguration {
     public JdbcBatchItemWriter<LogAnalyserModel> writer() {
         JdbcBatchItemWriter<LogAnalyserModel> writer = new JdbcBatchItemWriter<LogAnalyserModel>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<LogAnalyserModel>());
-        writer.setSql("INSERT INTO log_analyser (data_access, ip, request, status, user_agent) VALUES (:dataAccess, :ip, :request, :status, :userAgent)");
+        writer.setSql("INSERT INTO tb_log_analyser (data_access, ip, request, status, user_agent) VALUES (:dataAccess, :ip, :request, :status, :userAgent)");
         writer.setDataSource(dataSource);
         return writer;
     }
