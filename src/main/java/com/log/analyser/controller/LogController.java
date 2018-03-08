@@ -42,10 +42,10 @@ public class LogController {
     	
     	StringBuilder sbValidate = logAnalyserService.validateParam(startDate, duration, threshold);
     	
-    	if (!sbValidate.toString().isEmpty()) {
-    		view.addObject("errors", sbValidate.toString());
-    		return view;
-    	}
+        if (!sbValidate.toString().isEmpty()) {
+            attributes.addFlashAttribute("errors", sbValidate.toString());
+            return view;
+        }
     	
     	List<ListResultDTO> ipsByThreshold = logAnalyserService.getIpsByThreshold(startDate, duration, threshold);
 		attributes.addFlashAttribute("listIps", ipsByThreshold);
