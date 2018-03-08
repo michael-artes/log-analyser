@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -19,12 +19,12 @@ public class LogController {
 	@Autowired
 	private LogAnalyserService logAnalyserService;
 
-    @RequestMapping(method=RequestMethod.GET, value="/")
+    @RequestMapping("/")
     public String loginMessage(){
         return "home";
     }
     
-    @RequestMapping(method=RequestMethod.GET, value="ips-bloqued")
+    @RequestMapping("/ips-bloqued")
     public ModelAndView ipsBloqueds(){
     	
     	ModelAndView view = new ModelAndView("ipsbloqueds");
@@ -35,7 +35,7 @@ public class LogController {
         return view;
     }
     
-    @RequestMapping(method=RequestMethod.POST, value="search")
+    @PostMapping("/search")
     public ModelAndView search(String startDate, String duration, int threshold, RedirectAttributes attributes) {
     	
     	ModelAndView view = new ModelAndView("redirect:/");
