@@ -15,22 +15,22 @@
 		<div class="container">
 		
 			<c:if test="${not empty list}">
-				<c:forEach items="${list}" var="list">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>IP</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-								<tr>
-									<td>${list.ip}</td>
-									<td>${list.description}</td>
-								</tr>
-						</tbody>
-					</table>			
-				</c:forEach>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>IP</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${list}" var="list">
+						<tr>
+							<td>${list.ip}</td>
+							<td>${list.description}</td>
+						</tr>
+					</c:forEach>
+					</tbody>
+				</table>			
 			</c:if>
 			
 			

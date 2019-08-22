@@ -72,22 +72,22 @@
 			</c:if>			
 			
 			<c:if test="${not empty listIps}">
-				<c:forEach items="${listIps}" var="list">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>IP</th>
-								<th>Bloqued</th>
-							</tr>
-						</thead>
-						<tbody>
-								<tr>
-									<td>${list.ip}</td>
-									<td>${list.bloqued}</td>
-								</tr>
-						</tbody>
-					</table>			
-				</c:forEach>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>IP</th>
+							<th>Bloqued</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${listIps}" var="list">
+						<tr>
+							<td>${list.ip}</td>
+							<td>${list.bloqued}</td>
+						</tr>
+					</c:forEach>
+					</tbody>
+				</table>			
 			</c:if>
 				
 		
